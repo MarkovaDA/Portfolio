@@ -1,5 +1,6 @@
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import { Layout } from '../components/Layout'
+import { ProjectToolbar } from '../components/ProjectToolbar'
 import type { ProjectSlot as ProjectSlotData } from '../data'
 import { getProjectBySlug, projects } from '../data'
 
@@ -41,16 +42,16 @@ export function ProjectPage() {
   return (
     <Layout>
       <main className="project-page">
+        <ProjectToolbar
+          projectTitle={project.title}
+          currentIndex={currentIndex}
+          total={projects.length}
+          prev={prev}
+          next={next}
+        />
+
         <div className="project-page__layout">
           <aside className="project-page__sidebar">
-            <Link to="/#projects" className="project-page__back">
-              ← Все проекты
-            </Link>
-
-            <p className="project-page__index">
-              {String(currentIndex + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
-            </p>
-
             <h1 className="project-page__title">{project.title}</h1>
 
             <p className="project-page__description">{project.fullDescription}</p>
@@ -79,21 +80,6 @@ export function ProjectPage() {
                 </dd>
               </div>
             </dl>
-
-            <div className="project-page__nav">
-              {prev ? (
-                <Link to={`/projects/${prev.slug}`} className="project-page__nav-link">
-                  ← {prev.title}
-                </Link>
-              ) : (
-                <span />
-              )}
-              {next && (
-                <Link to={`/projects/${next.slug}`} className="project-page__nav-link project-page__nav-link--next">
-                  {next.title} →
-                </Link>
-              )}
-            </div>
           </aside>
 
           <div className="project-page__slots">

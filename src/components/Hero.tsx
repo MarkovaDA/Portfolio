@@ -32,22 +32,21 @@ export function Hero() {
 
         <div className="hero__stats">
           <div className="hero__stat">
-            <span className="hero__stat-value">3+</span>
-            <span className="hero__stat-label">года опыта</span>
+            <span className="hero__stat-value">7+</span>
+            <span className="hero__stat-label">лет опыта</span>
           </div>
           <div className="hero__stat-divider" aria-hidden="true" />
           <div className="hero__stat">
-            <span className="hero__stat-value">10+</span>
+            <span className="hero__stat-value">20+</span>
             <span className="hero__stat-label">проектов</span>
           </div>
           <div className="hero__stat-divider" aria-hidden="true" />
           <div className="hero__stat">
-            <span className="hero__stat-value">15+</span>
+            <span className="hero__stat-value">100+</span>
             <span className="hero__stat-label">довольных клиентов</span>
           </div>
         </div>
       </div>
-
       <a href="#about" className="hero__scroll" aria-label="Прокрутить вниз">
         <span />
       </a>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { DecorativeArrow } from './DecorativeArrow'
 import { projects } from '../data'
 
 export function Projects() {
@@ -34,9 +35,7 @@ export function Projects() {
                 </ul>
               </div>
 
-              <span className="project-strip__arrow" aria-hidden="true">
-                →
-              </span>
+              <DecorativeArrow className="project-strip__arrow" />
             </Link>
           ))}
         </div>
