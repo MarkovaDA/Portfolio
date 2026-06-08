@@ -12,9 +12,9 @@ export function Hero() {
           Открыта к новым проектам
         </p>
 
+
         <h1 className="hero__title">
-          Привет, я{' '}
-          <span className="hero__name">{siteConfig.name}</span>
+          <span className="hero__name">Дарья Маркова</span> 
           <br />
           <em>{siteConfig.role}</em>
         </h1>

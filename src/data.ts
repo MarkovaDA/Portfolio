@@ -25,9 +25,9 @@ export interface Skill {
 }
 
 export const siteConfig = {
-  name: 'Дарья',
+  name: 'Portfolio',
   role: 'Frontend-разработчик',
-  tagline: 'Создаю красивые и быстрые веб-приложения',
+  tagline: 'Programming as live | Программирование как жизнь',
   email: 'hello@example.com',
   github: 'https://github.com',
   telegram: 'https://t.me',

@@ -21,7 +21,8 @@ export function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="container header__inner">
         <Link to="/" className="header__logo">
-          {siteConfig.name}<span className="header__logo-dot">.</span>
+          {siteConfig.name}
+          {/* <span className="header__logo-dot">.</span> */}
         </Link>
 
         <nav className={`header__nav ${menuOpen ? 'header__nav--open' : ''}`}>
