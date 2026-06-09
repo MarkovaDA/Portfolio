@@ -80,15 +80,17 @@ export function ProjectPage() {
         />
 
         <div className="project-page__layout">
-          <div className="project-page__content">
-            <ProjectIntro project={project} index={currentIndex} />
+          <div className="container project-page__content">
+            <div className="project-page__article">
+              <ProjectIntro project={project} index={currentIndex} />
 
-            <section className="project-page__slots" aria-label="Экраны проекта">
-              <h2 className="project-page__slots-title">Экраны и решения</h2>
-              {project.slots.map((slot, index) => (
-                <ProjectSlot key={slot.id} slot={slot} index={index} />
-              ))}
-            </section>
+              <section className="project-page__slots" aria-label="Экраны проекта">
+                <h2 className="project-page__slots-title">Экраны и решения</h2>
+                {project.slots.map((slot, index) => (
+                  <ProjectSlot key={slot.id} slot={slot} index={index} />
+                ))}
+              </section>
+            </div>
           </div>
         </div>
       </main>
