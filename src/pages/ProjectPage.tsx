@@ -1,29 +1,58 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { Layout } from '../components/Layout'
 import { ProjectToolbar } from '../components/ProjectToolbar'
-import type { ProjectSlot as ProjectSlotData } from '../data'
+import type { Project, ProjectSlot as ProjectSlotData } from '../data'
 import { getProjectBySlug, projects } from '../data'
+
+function ProjectIntro({ project, index }: { project: Project; index: number }) {
+  return (
+    <header className="project-intro">
+      <span className="project-intro__index" aria-hidden="true">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+      <h1 className="project-intro__title">{project.title}</h1>
+      <p className="project-intro__desc">{project.fullDescription}</p>
+
+      <ul className="project-intro__tags">
+        {project.tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+
+      <div className="project-intro__links">
+        <a
+          href={project.repoUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="project-intro__link"
+        >
+          Репозиторий
+        </a>
+        <a
+          href={project.publicUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="project-intro__link project-intro__link--accent"
+        >
+          Смотреть демо
+        </a>
+      </div>
+    </header>
+  )
+}
 
 function ProjectSlot({ slot, index }: { slot: ProjectSlotData; index: number }) {
   return (
-    <article className="project-slot">
-      <figure className="project-slot__screenshot">
-        <div className="project-slot__frame" data-slot={index + 1}>
-          {slot.image ? (
-            <img src={slot.image} alt={slot.label} className="project-slot__image" />
-          ) : (
-            <span className="project-slot__placeholder">Скриншот</span>
-          )}
-        </div>
-        <figcaption className="project-slot__caption">{slot.label}</figcaption>
-      </figure>
-
-      <div className="project-slot__stack">
-        <span className="project-slot__stack-label">Технологический стек</span>
-        <p className="project-slot__stack-title">{slot.techStack.title}</p>
-        <p className="project-slot__stack-desc">{slot.techStack.description}</p>
+    <figure className="project-slot">
+      <div className="project-slot__frame" data-slot={index + 1}>
+        {slot.image ? (
+          <img src={slot.image} alt={slot.label} className="project-slot__image" />
+        ) : (
+          <span className="project-slot__placeholder">Скриншот</span>
+        )}
       </div>
-    </article>
+      <figcaption className="project-slot__caption">{slot.label}</figcaption>
+    </figure>
   )
 }
 
@@ -51,41 +80,15 @@ export function ProjectPage() {
         />
 
         <div className="project-page__layout">
-          <aside className="project-page__sidebar">
-            <h1 className="project-page__title">{project.title}</h1>
+          <div className="project-page__content">
+            <ProjectIntro project={project} index={currentIndex} />
 
-            <p className="project-page__description">{project.fullDescription}</p>
-
-            <ul className="project-page__tags">
-              {project.tags.map((tag) => (
-                <li key={tag}>{tag}</li>
+            <section className="project-page__slots" aria-label="Экраны проекта">
+              <h2 className="project-page__slots-title">Экраны и решения</h2>
+              {project.slots.map((slot, index) => (
+                <ProjectSlot key={slot.id} slot={slot} index={index} />
               ))}
-            </ul>
-
-            <dl className="project-page__meta">
-              <div className="project-page__meta-row">
-                <dt>Репозиторий</dt>
-                <dd>
-                  <a href={project.repoUrl} target="_blank" rel="noreferrer">
-                    {project.repoUrl}
-                  </a>
-                </dd>
-              </div>
-              <div className="project-page__meta-row">
-                <dt>Публичный URL</dt>
-                <dd>
-                  <a href={project.publicUrl} target="_blank" rel="noreferrer">
-                    {project.publicUrl}
-                  </a>
-                </dd>
-              </div>
-            </dl>
-          </aside>
-
-          <div className="project-page__slots">
-            {project.slots.map((slot, index) => (
-              <ProjectSlot key={slot.id} slot={slot} index={index} />
-            ))}
+            </section>
           </div>
         </div>
       </main>

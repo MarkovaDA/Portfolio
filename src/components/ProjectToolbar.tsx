@@ -23,7 +23,7 @@ export function ProjectToolbar({
 }: ProjectToolbarProps) {
   return (
     <div className="project-page__toolbar">
-      <div className="container project-page__toolbar-inner">
+      <div className="project-page__toolbar-inner">
         <nav className="breadcrumbs" aria-label="Хлебные крошки">
           <ol className="breadcrumbs__list">
             <li className="breadcrumbs__item">

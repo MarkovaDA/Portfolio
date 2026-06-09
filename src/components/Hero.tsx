@@ -29,7 +29,7 @@ export function Hero() {
             Написать мне
           </a>
         </div>
-
+        
         <div className="hero__stats">
           <div className="hero__stat">
             <span className="hero__stat-value">7+</span>

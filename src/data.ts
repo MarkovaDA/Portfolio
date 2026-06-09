@@ -1,6 +1,7 @@
 export interface ProjectSlot {
   id: string
   label: string
+  summary: string
   image?: string
   techStack: {
     title: string
@@ -48,6 +49,7 @@ export const projects: Project[] = [
       {
         id: 'overview',
         label: 'Главный дашборд',
+        summary: 'Обзор KPI: выручка, количество заказов и динамика продаж за выбранный период.',
         techStack: {
           title: 'React',
           description: 'Компонентная архитектура дашборда: виджеты KPI, фильтры и таблицы собраны из переиспользуемых React-компонентов.',
@@ -56,6 +58,7 @@ export const projects: Project[] = [
       {
         id: 'orders',
         label: 'Список заказов',
+        summary: 'Таблица заказов с фильтрами по статусу, дате и быстрыми действиями для менеджера.',
         techStack: {
           title: 'TypeScript',
           description: 'Строгая типизация моделей заказов, статусов и фильтров — меньше ошибок при работе с API и формами.',
@@ -64,6 +67,7 @@ export const projects: Project[] = [
       {
         id: 'analytics',
         label: 'Аналитика продаж',
+        summary: 'Интерактивные графики для анализа трендов и сравнения показателей по периодам.',
         techStack: {
           title: 'Chart.js',
           description: 'Интерактивные графики продаж и динамики: line/bar charts с кастомными тултипами и адаптивной вёрсткой.',
@@ -72,6 +76,7 @@ export const projects: Project[] = [
       {
         id: 'mobile',
         label: 'Мобильная версия',
+        summary: 'Адаптированный интерфейс панели для планшетов и смартфонов без потери функций.',
         techStack: {
           title: 'CSS Grid & Flexbox',
           description: 'Адаптивная сетка и breakpoints — панель корректно работает на планшетах и смартфонах без отдельного приложения.',
@@ -92,6 +97,7 @@ export const projects: Project[] = [
       {
         id: 'board',
         label: 'Kanban-доска',
+        summary: 'Колонки задач с drag-and-drop и мгновенным обновлением статусов.',
         techStack: {
           title: 'React DnD',
           description: 'Drag-and-drop карточек между колонками с оптимистичным обновлением UI и сохранением порядка на сервере.',
@@ -100,6 +106,7 @@ export const projects: Project[] = [
       {
         id: 'card',
         label: 'Карточка задачи',
+        summary: 'Детальная карточка с описанием, дедлайном и назначенным исполнителем.',
         techStack: {
           title: 'Node.js',
           description: 'REST API для CRUD операций с задачами: создание, редактирование, назначение исполнителей и дедлайнов.',
@@ -108,6 +115,7 @@ export const projects: Project[] = [
       {
         id: 'team',
         label: 'Командная работа',
+        summary: 'Совместная работа в реальном времени — изменения видны всей команде.',
         techStack: {
           title: 'WebSocket',
           description: 'Real-time синхронизация доски между участниками команды — изменения видны мгновенно без перезагрузки.',
@@ -128,6 +136,7 @@ export const projects: Project[] = [
       {
         id: 'home',
         label: 'Главный экран',
+        summary: 'Текущая погода, динамический фон и ключевые параметры на одном экране.',
         techStack: {
           title: 'Vue 3',
           description: 'Composition API и реактивные computed-свойства для отображения текущей погоды и динамического фона.',
@@ -136,6 +145,7 @@ export const projects: Project[] = [
       {
         id: 'forecast',
         label: 'Прогноз на 14 дней',
+        summary: 'Прогноз на две недели с визуализацией температуры и осадков.',
         techStack: {
           title: 'OpenWeather API',
           description: 'Запросы к внешнему API с кэшированием ответов и обработкой ошибок сети.',
@@ -144,6 +154,7 @@ export const projects: Project[] = [
       {
         id: 'hourly',
         label: 'Почасовой прогноз',
+        summary: 'Почасовой прогноз с удобной прокруткой по времени суток.',
         techStack: {
           title: 'PWA',
           description: 'Service Worker и manifest — приложение устанавливается на домашний экран и работает offline.',
@@ -164,6 +175,7 @@ export const projects: Project[] = [
       {
         id: 'dashboard',
         label: 'Обзор финансов',
+        summary: 'Сводка доходов, расходов и баланса за текущий месяц.',
         techStack: {
           title: 'React',
           description: 'Dashboard с агрегированными суммами доходов и расходов, обновляемый при каждой новой транзакции.',
@@ -172,6 +184,7 @@ export const projects: Project[] = [
       {
         id: 'charts',
         label: 'Диаграммы расходов',
+        summary: 'Наглядные диаграммы распределения трат по категориям.',
         techStack: {
           title: 'D3.js',
           description: 'Кастомные pie и bar charts для визуализации расходов по категориям с анимацией переходов.',
@@ -180,6 +193,7 @@ export const projects: Project[] = [
       {
         id: 'budget',
         label: 'Бюджеты по категориям',
+        summary: 'Лимиты по категориям и контроль перерасхода в реальном времени.',
         techStack: {
           title: 'IndexedDB',
           description: 'Локальное хранение транзакций и бюджетов в браузере — данные доступны без сервера.',
@@ -188,6 +202,7 @@ export const projects: Project[] = [
       {
         id: 'transactions',
         label: 'Список транзакций',
+        summary: 'История операций с поиском, фильтрами и быстрым добавлением.',
         techStack: {
           title: 'CSV Export',
           description: 'Экспорт истории операций в CSV через Blob API для импорта в Excel или Google Sheets.',
@@ -208,6 +223,7 @@ export const projects: Project[] = [
       {
         id: 'homepage',
         label: 'Главная блога',
+        summary: 'Лента статей с тегами, поиском и акцентом на читаемость.',
         techStack: {
           title: 'Next.js',
           description: 'Static Site Generation для главной и списка статей — максимальная скорость загрузки и SEO.',
@@ -216,6 +232,7 @@ export const projects: Project[] = [
       {
         id: 'article',
         label: 'Страница статьи',
+        summary: 'Страница публикации с типографикой, оглавлением и метаданными.',
         techStack: {
           title: 'MDX',
           description: 'Статьи пишутся в Markdown с возможностью встраивать React-компоненты прямо в контент.',
@@ -224,6 +241,7 @@ export const projects: Project[] = [
       {
         id: 'editor',
         label: 'Редактор Markdown',
+        summary: 'Редактор с live-preview и удобной работой с Markdown.',
         techStack: {
           title: 'Tailwind CSS',
           description: 'Utility-first стилизация редактора, превью и типографики статей с единой дизайн-системой.',
@@ -244,6 +262,7 @@ export const projects: Project[] = [
       {
         id: 'tokens',
         label: 'Дизайн-токены',
+        summary: 'Палитра, отступы и радиусы — единая система визуальных констант.',
         techStack: {
           title: 'Design Tokens',
           description: 'CSS-переменные для цветов, отступов и радиусов — единый источник правды для всех компонентов.',
@@ -252,6 +271,7 @@ export const projects: Project[] = [
       {
         id: 'components',
         label: 'Каталог компонентов',
+        summary: 'Каталог UI-компонентов с вариантами и состояниями.',
         techStack: {
           title: 'Storybook',
           description: 'Интерактивная документация компонентов с controls, variants и accessibility-проверками.',
@@ -260,6 +280,7 @@ export const projects: Project[] = [
       {
         id: 'forms',
         label: 'Формы и инпуты',
+        summary: 'Набор доступных полей ввода и паттернов для форм.',
         techStack: {
           title: 'React Aria',
           description: 'Accessible form controls с поддержкой клавиатуры, screen readers и ARIA-атрибутов.',
@@ -268,6 +289,7 @@ export const projects: Project[] = [
       {
         id: 'docs',
         label: 'Документация',
+        summary: 'Гайдлайны для дизайнеров и разработчиков в одном месте.',
         techStack: {
           title: 'Figma',
           description: 'Синхронизация макетов Figma с кодом — дизайнеры и разработчики работают из одного источника.',
@@ -276,6 +298,7 @@ export const projects: Project[] = [
       {
         id: 'themes',
         label: 'Светлая и тёмная тема',
+        summary: 'Переключение светлой и тёмной темы без перезагрузки.',
         techStack: {
           title: 'CSS Custom Properties',
           description: 'Переключение light/dark через data-theme и CSS-переменные без дублирования стилей.',
@@ -296,6 +319,7 @@ export const projects: Project[] = [
       {
         id: 'rooms',
         label: 'Список комнат',
+        summary: 'Список чатов с превью последнего сообщения и счётчиком непрочитанного.',
         techStack: {
           title: 'Socket.io',
           description: 'WebSocket-соединение для мгновенной доставки сообщений и обновления списка комнат.',
@@ -304,6 +328,7 @@ export const projects: Project[] = [
       {
         id: 'conversation',
         label: 'Диалог',
+        summary: 'Лента сообщений, реакции и индикатор набора текста.',
         techStack: {
           title: 'React',
           description: 'Виртуализированный список сообщений с автопрокруткой и индикатором «печатает…».',
@@ -312,6 +337,7 @@ export const projects: Project[] = [
       {
         id: 'files',
         label: 'Обмен файлами',
+        summary: 'Отправка и просмотр вложений прямо в диалоге.',
         techStack: {
           title: 'PostgreSQL',
           description: 'Хранение метаданных файлов и истории сообщений в реляционной БД с полнотекстовым поиском.',
@@ -332,6 +358,7 @@ export const projects: Project[] = [
       {
         id: 'grid',
         label: 'Masonry-сетка',
+        summary: 'Адаптивная сетка фотографий с плавной подгрузкой изображений.',
         techStack: {
           title: 'CSS Grid',
           description: 'Masonry-подобная сетка фотографий с auto-fill и разными aspect-ratio без JavaScript-библиотек.',
@@ -340,6 +367,7 @@ export const projects: Project[] = [
       {
         id: 'lightbox',
         label: 'Lightbox',
+        summary: 'Полноэкранный просмотр с навигацией между снимками.',
         techStack: {
           title: 'React Portal',
           description: 'Полноэкранный просмотр через portal — overlay поверх страницы с focus trap и ESC-закрытием.',
@@ -348,6 +376,7 @@ export const projects: Project[] = [
       {
         id: 'albums',
         label: 'Альбомы и фильтры',
+        summary: 'Фильтрация по альбомам и тегам для быстрого поиска.',
         techStack: {
           title: 'Cloudinary',
           description: 'CDN для изображений с on-the-fly ресайзом, WebP-конвертацией и blur-placeholder.',
@@ -368,6 +397,7 @@ export const projects: Project[] = [
       {
         id: 'workout',
         label: 'Активная тренировка',
+        summary: 'Экран активной тренировки с таймером и учётом подходов.',
         techStack: {
           title: 'React Native Web',
           description: 'Кроссплатформенный UI для таймера, счётчика подходов и списка упражнений.',
@@ -376,6 +406,7 @@ export const projects: Project[] = [
       {
         id: 'calendar',
         label: 'Календарь активности',
+        summary: 'Календарь тренировок и визуализация регулярности занятий.',
         techStack: {
           title: 'Recharts',
           description: 'Heatmap и bar charts активности по дням — визуализация регулярности тренировок.',
@@ -384,6 +415,7 @@ export const projects: Project[] = [
       {
         id: 'stats',
         label: 'Статистика прогресса',
+        summary: 'Графики прогресса по весам, повторениям и активности.',
         techStack: {
           title: 'Health API',
           description: 'Синхронизация шагов и активности с HealthKit / Google Fit через Web API.',
@@ -392,6 +424,7 @@ export const projects: Project[] = [
       {
         id: 'library',
         label: 'Библиотека упражнений',
+        summary: 'Справочник упражнений с описанием и видео-демонстрацией.',
         techStack: {
           title: 'PWA',
           description: 'Offline-доступ к библиотеке упражнений через Service Worker и кэширование assets.',
@@ -412,6 +445,7 @@ export const projects: Project[] = [
       {
         id: 'map',
         label: 'Интерактивная карта',
+        summary: 'Карта с маркерами, масштабированием и кастомными слоями.',
         techStack: {
           title: 'Mapbox GL JS',
           description: 'WebGL-рендеринг карты с кастомными стилями, слоями и плавным zoom/pan.',
@@ -420,6 +454,7 @@ export const projects: Project[] = [
       {
         id: 'routes',
         label: 'Построение маршрутов',
+        summary: 'Построение и отображение маршрута между выбранными точками.',
         techStack: {
           title: 'Mapbox Directions API',
           description: 'Расчёт маршрутов между точками с отображением distance/duration на карте.',
@@ -428,6 +463,7 @@ export const projects: Project[] = [
       {
         id: 'search',
         label: 'Поиск мест',
+        summary: 'Поиск адресов и мест с подсказками при вводе.',
         techStack: {
           title: 'Geocoding API',
           description: 'Autocomplete поиск адресов и POI с debounce и кэшированием результатов.',
@@ -436,6 +472,7 @@ export const projects: Project[] = [
       {
         id: 'favorites',
         label: 'Избранные локации',
+        summary: 'Сохранённые локации с быстрым доступом из списка.',
         techStack: {
           title: 'GeoJSON',
           description: 'Хранение избранных точек в формате GeoJSON FeatureCollection для экспорта и импорта.',
