@@ -1,10 +1,24 @@
+import { useLocale } from '../i18n/LocaleProvider'
+
+function HighlightItem({ text }: { text: string }) {
+  const [title, ...rest] = text.split(' — ')
+  return (
+    <li>
+      <strong>{title}</strong>
+      {rest.length > 0 && <> — {rest.join(' — ')}</>}
+    </li>
+  )
+}
+
 export function About() {
+  const { t } = useLocale()
+
   return (
     <section id="about" className="section about">
       <div className="container">
         <div className="section__header">
-          <span className="section__label">Обо мне</span>
-          <h2 className="section__title">Кто я и чем занимаюсь</h2>
+          <span className="section__label">{t.about.label}</span>
+          <h2 className="section__title">{t.about.title}</h2>
         </div>
 
         <div className="about__grid">
@@ -16,30 +30,16 @@ export function About() {
           </div>
 
           <div className="about__content">
-            <p className="about__text">
-              Я - frontend-разработчик с фокусом на создание интуитивных интерфейсов и отличного пользовательского опыта. 
-              Стремлюсь к чистоте кода, следую лучшим практикам и постоянно изучаю новые технологии, 
-              чтобы создавать продукты, которыми будут пользоваться с удовольствием. 
-            </p>
-            <p className="about__text">
-            Моя цель — превращать дизайн‑макеты в интерактивные веб‑приложения, 
-            которые не только выглядят безупречно, но и работают быстро, стабильно и одинаково хорошо на всех устройствах.
-            </p>
-            <p className="about__text">
-              Работаю со всеми лидирующими frontend-фремворками React, Angular, Vue, RX.JS и языками программирования JavaScript, TypeScript и современным CSS. 
-              Также использую AI инструменты последних тенденций и вайб-кодинг при необходимости.
-            </p>
+            {t.about.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 24)} className="about__text">
+                {paragraph}
+              </p>
+            ))}
 
             <ul className="about__highlights">
-              <li>
-                <strong>Фокус на UX</strong> — каждый пиксель имеет значение
-              </li>
-              <li>
-                <strong>Чистый код</strong> — читаемость и поддерживаемость
-              </li>
-              <li>
-                <strong>Performance</strong> — быстрая загрузка и плавные анимации
-              </li>
+              {t.about.highlights.map((item) => (
+                <HighlightItem key={item} text={item} />
+              ))}
             </ul>
           </div>
         </div>

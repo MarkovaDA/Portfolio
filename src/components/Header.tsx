@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { navLinks, siteConfig } from '../data'
+import { siteConfig } from '../data'
+import { useLocale } from '../i18n/LocaleProvider'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Header() {
+  const { t, navLinks } = useLocale()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -35,16 +38,22 @@ export function Header() {
               {label}
             </Link>
           ))}
+          <div className="header__nav-lang">
+            <LanguageSwitcher />
+          </div>
         </nav>
 
-        <Link to="/#contact" className="btn btn--primary header__cta">
-          Связаться
-        </Link>
+        <div className="header__actions">
+          <LanguageSwitcher />
+          <Link to="/#contact" className="btn btn--primary header__cta">
+            {t.nav.cta}
+          </Link>
+        </div>
 
         <button
           className={`header__burger ${menuOpen ? 'header__burger--open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          aria-label={menuOpen ? t.a11y.closeMenu : t.a11y.openMenu}
           aria-expanded={menuOpen}
         >
           <span />

@@ -27,8 +27,6 @@ export interface Skill {
 
 export const siteConfig = {
   name: 'Portfolio',
-  role: 'Frontend-разработчик',
-  tagline: 'Programming as live | Программирование как жизнь',
   email: 'hello@example.com',
   github: 'https://github.com',
   telegram: 'https://t.me',
@@ -494,9 +492,3 @@ export const skills: Skill[] = [
   { name: 'Node.js', level: 70 },
 ]
 
-export const navLinks = [
-  { href: '/#about', label: 'Обо мне' },
-  { href: '/#projects', label: 'Проекты' },
-  { href: '/#skills', label: 'Навыки' },
-  { href: '/#contact', label: 'Контакты' },
-]

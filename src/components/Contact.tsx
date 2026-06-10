@@ -1,18 +1,19 @@
-import { Link } from 'react-router-dom'
+import type { MouseEvent } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { siteConfig } from '../data'
+import { useLocale } from '../i18n/LocaleProvider'
 
 export function Contact() {
+  const { t } = useLocale()
+
   return (
     <section id="contact" className="section contact">
       <div className="container">
         <div className="contact__card">
           <div className="contact__content">
-            <span className="section__label">Контакты</span>
-            <h2 className="contact__title">Давайте работать вместе</h2>
-            <p className="contact__desc">
-              Есть идея для проекта или просто хотите поздороваться?
-              Напишите — отвечу в ближайшее время.
-            </p>
+            <span className="section__label">{t.contact.label}</span>
+            <h2 className="contact__title">{t.contact.title}</h2>
+            <p className="contact__desc">{t.contact.desc}</p>
           </div>
 
           <div className="contact__actions">
@@ -39,12 +40,29 @@ export function Contact() {
 
 export function Footer() {
   const year = new Date().getFullYear()
+  const { t } = useLocale()
+  const { pathname } = useLocation()
+
+  const handleTopClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      e.preventDefault()
+      window.history.replaceState(null, '', pathname)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <p>© {year} {siteConfig.name}. Сделано с ♥</p>
-        <Link to="/" className="footer__top">Наверх ↑</Link>
+        <p>© {year} {siteConfig.name}. {t.footer.madeWith}</p>
+        <Link
+          to="/"
+          className="footer__top"
+          onClick={handleTopClick}
+          aria-label={t.a11y.backToTop}
+        >
+          {t.footer.backToTop} ↑
+        </Link>
       </div>
     </footer>
   )

@@ -1,13 +1,16 @@
 import type { CSSProperties } from 'react'
 import { skills } from '../data'
+import { useLocale } from '../i18n/LocaleProvider'
 
 export function Skills() {
+  const { t } = useLocale()
+
   return (
     <section id="skills" className="section skills">
       <div className="container">
         <div className="section__header">
-          <span className="section__label">Навыки</span>
-          <h2 className="section__title">Технологии и инструменты</h2>
+          <span className="section__label">{t.skills.label}</span>
+          <h2 className="section__title">{t.skills.title}</h2>
         </div>
 
         <div className="skills__grid">

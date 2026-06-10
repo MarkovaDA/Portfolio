@@ -1,6 +1,8 @@
-import { siteConfig } from '../data'
+import { useLocale } from '../i18n/LocaleProvider'
 
 export function Hero() {
+  const { t } = useLocale()
+
   return (
     <section className="hero">
       <div className="hero__glow hero__glow--1" aria-hidden="true" />
@@ -9,45 +11,44 @@ export function Hero() {
       <div className="container hero__inner">
         <p className="hero__badge">
           <span className="hero__badge-dot" />
-          Открыта к новым проектам
+          {t.hero.badge}
         </p>
 
-
         <h1 className="hero__title">
-          <span className="hero__name">Дарья Маркова</span> 
+          <span className="hero__name">{t.hero.name}</span>
           <br />
-          <em>{siteConfig.role}</em>
+          <em>{t.hero.role}</em>
         </h1>
 
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">{t.hero.tagline}</p>
 
         <div className="hero__actions">
           <a href="#projects" className="btn btn--primary">
-            Смотреть проекты
+            {t.hero.viewProjects}
           </a>
           <a href="#contact" className="btn btn--ghost">
-            Написать мне
+            {t.hero.writeMe}
           </a>
         </div>
-        
+
         <div className="hero__stats">
           <div className="hero__stat">
             <span className="hero__stat-value">7+</span>
-            <span className="hero__stat-label">лет опыта</span>
+            <span className="hero__stat-label">{t.hero.yearsExperience}</span>
           </div>
           <div className="hero__stat-divider" aria-hidden="true" />
           <div className="hero__stat">
             <span className="hero__stat-value">20+</span>
-            <span className="hero__stat-label">проектов</span>
+            <span className="hero__stat-label">{t.hero.projectsCount}</span>
           </div>
           <div className="hero__stat-divider" aria-hidden="true" />
           <div className="hero__stat">
             <span className="hero__stat-value">100+</span>
-            <span className="hero__stat-label">довольных клиентов</span>
+            <span className="hero__stat-label">{t.hero.happyClients}</span>
           </div>
         </div>
       </div>
-      <a href="#about" className="hero__scroll" aria-label="Прокрутить вниз">
+      <a href="#about" className="hero__scroll" aria-label={t.a11y.scrollDown}>
         <span />
       </a>
     </section>

@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom'
+import { useLocale } from '../i18n/LocaleProvider'
 import { DecorativeArrow } from './DecorativeArrow'
-import { projects } from '../data'
 
 export function Projects() {
+  const { t, projects } = useLocale()
+
   return (
     <section id="projects" className="section projects">
       <div className="container">
         <div className="section__header">
-          <span className="section__label">Портфолио</span>
-          <h2 className="section__title">Работы</h2>
-          <p className="section__desc">
-            {projects.length} проектов — выберите работу, чтобы открыть страницу с деталями и слотами.
-          </p>
+          <span className="section__label">{t.projects.label}</span>
+          <h2 className="section__title">{t.projects.title}</h2>
+          <p className="section__desc">{t.projects.desc(projects.length)}</p>
         </div>
 
         <div className="projects__list">

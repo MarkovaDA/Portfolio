@@ -2,9 +2,11 @@ import { Navigate, useParams } from 'react-router-dom'
 import { Layout } from '../components/Layout'
 import { ProjectToolbar } from '../components/ProjectToolbar'
 import type { Project, ProjectSlot as ProjectSlotData } from '../data'
-import { getProjectBySlug, projects } from '../data'
+import { useLocale } from '../i18n/LocaleProvider'
 
 function ProjectIntro({ project, index }: { project: Project; index: number }) {
+  const { t } = useLocale()
+
   return (
     <header className="project-intro">
       <span className="project-intro__index" aria-hidden="true">
@@ -26,7 +28,7 @@ function ProjectIntro({ project, index }: { project: Project; index: number }) {
           rel="noreferrer"
           className="project-intro__link"
         >
-          Репозиторий
+          {t.projectPage.repo}
         </a>
         <a
           href={project.publicUrl}
@@ -34,21 +36,29 @@ function ProjectIntro({ project, index }: { project: Project; index: number }) {
           rel="noreferrer"
           className="project-intro__link project-intro__link--accent"
         >
-          Смотреть демо
+          {t.projectPage.demo}
         </a>
       </div>
     </header>
   )
 }
 
-function ProjectSlot({ slot, index }: { slot: ProjectSlotData; index: number }) {
+function ProjectSlot({
+  slot,
+  index,
+  screenshotLabel,
+}: {
+  slot: ProjectSlotData
+  index: number
+  screenshotLabel: string
+}) {
   return (
     <figure className="project-slot">
       <div className="project-slot__frame" data-slot={index + 1}>
         {slot.image ? (
           <img src={slot.image} alt={slot.label} className="project-slot__image" />
         ) : (
-          <span className="project-slot__placeholder">Скриншот</span>
+          <span className="project-slot__placeholder">{screenshotLabel}</span>
         )}
       </div>
       <figcaption className="project-slot__caption">{slot.label}</figcaption>
@@ -58,6 +68,7 @@ function ProjectSlot({ slot, index }: { slot: ProjectSlotData; index: number }) 
 
 export function ProjectPage() {
   const { slug } = useParams<{ slug: string }>()
+  const { projects, getProjectBySlug, t } = useLocale()
   const project = slug ? getProjectBySlug(slug) : undefined
 
   if (!project) {
@@ -84,10 +95,15 @@ export function ProjectPage() {
             <div className="project-page__article">
               <ProjectIntro project={project} index={currentIndex} />
 
-              <section className="project-page__slots" aria-label="Экраны проекта">
-                <h2 className="project-page__slots-title">Экраны и решения</h2>
+              <section className="project-page__slots" aria-label={t.a11y.projectScreens}>
+                <h2 className="project-page__slots-title">{t.projectPage.screensTitle}</h2>
                 {project.slots.map((slot, index) => (
-                  <ProjectSlot key={slot.id} slot={slot} index={index} />
+                  <ProjectSlot
+                    key={slot.id}
+                    slot={slot}
+                    index={index}
+                    screenshotLabel={t.projectPage.screenshot}
+                  />
                 ))}
               </section>
             </div>
