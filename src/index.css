@@ -385,7 +385,7 @@ img {
 
 .hero__stat-value {
   display: block;
-  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-size: clamp(3rem, 8vw, 4.75rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -394,6 +394,7 @@ img {
 
 .hero__stat-label {
   font-size: var(--text-sm);
+  margin-top: 0.25rem;
   color: var(--text-muted);
 }
 
@@ -1278,7 +1279,7 @@ img {
   }
 
   .hero__stat-value {
-    font-size: clamp(3rem, 14vw, 4rem);
+    font-size: clamp(2.75rem, 12vw, 3.75rem);
   }
 
   .contact__card {
