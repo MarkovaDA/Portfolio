@@ -6,6 +6,8 @@ export const en: Messages = {
   },
   a11y: {
     language: 'Language selection',
+    switchToLight: 'Switch to light theme',
+    switchToDark: 'Switch to dark theme',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     scrollDown: 'Scroll down',

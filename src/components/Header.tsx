@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { siteConfig } from '../data'
 import { useLocale } from '../i18n/LocaleProvider'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Header() {
   const { t, navLinks } = useLocale()
@@ -39,11 +40,13 @@ export function Header() {
             </Link>
           ))}
           <div className="header__nav-lang">
+            <ThemeSwitcher />
             <LanguageSwitcher />
           </div>
         </nav>
 
         <div className="header__actions">
+          <ThemeSwitcher />
           <LanguageSwitcher />
           <Link to="/#contact" className="btn btn--primary header__cta">
             {t.nav.cta}

@@ -18,6 +18,8 @@ export interface Messages {
   }
   a11y: {
     language: string
+    switchToLight: string
+    switchToDark: string
     openMenu: string
     closeMenu: string
     scrollDown: string

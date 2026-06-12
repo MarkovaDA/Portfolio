@@ -6,6 +6,8 @@ export const ru: Messages = {
   },
   a11y: {
     language: 'Выбор языка',
+    switchToLight: 'Включить светлую тему',
+    switchToDark: 'Включить тёмную тему',
     openMenu: 'Открыть меню',
     closeMenu: 'Закрыть меню',
     scrollDown: 'Прокрутить вниз',

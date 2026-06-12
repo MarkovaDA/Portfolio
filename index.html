@@ -1,6 +1,17 @@
 <!doctype html>
-<html lang="ru" data-locale="ru">
+<html lang="ru" data-locale="ru" data-theme="dark">
   <head>
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('portfolio-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
