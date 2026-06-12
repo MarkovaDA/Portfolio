@@ -39,6 +39,7 @@
   --header-h: 72px;
   --project-toolbar-h: 60px;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --tag-gradient-border: 1px;
 
   /* Typography scale */
   --text-xs: 0.9375rem;
@@ -389,15 +390,19 @@ img {
 .hero__role {
   display: inline-block;
   max-width: 100%;
+  padding-inline-end: 0.2em;
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 4.2vw, 2.35rem);
   font-style: italic;
   font-weight: 600;
   line-height: 1.2;
+  letter-spacing: 0;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .hero__name {
@@ -709,7 +714,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: var(--tag-gradient-border);
   background: var(--gradient);
   pointer-events: none;
 }
@@ -891,7 +896,7 @@ img {
 }
 
 .project-pager__label {
-  font-size: var(--text-xs);
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1003,7 +1008,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: var(--tag-gradient-border);
   background: var(--gradient);
   pointer-events: none;
 }
@@ -1192,6 +1197,8 @@ img {
 }
 
 .skills__tag {
+  position: relative;
+  overflow: hidden;
   padding: 0.5rem 1.25rem;
   font-size: var(--text-sm);
   color: var(--text-muted);
@@ -1199,6 +1206,17 @@ img {
   border-radius: var(--radius);
   background: var(--bg-card);
   transition: color var(--transition), border-color var(--transition);
+}
+
+.skills__tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--tag-gradient-border);
+  background: var(--gradient);
+  pointer-events: none;
 }
 
 .skills__tag:hover {
