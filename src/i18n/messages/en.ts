@@ -38,9 +38,9 @@ export const en: Messages = {
     label: 'About',
     title: 'Who I am and what I do',
     paragraphs: [
-      'Glad you are here. I am Darya, a frontend developer. To me, an interface is not just markup from a design file — it is a conversation with the user: clear, calm, and free of unnecessary noise.',
-      'I turn design into working web applications — with attention to detail, smooth motion, and reliable performance on any device. I care that a product is not only beautiful, but genuinely easy to use.',
-      'My stack includes React, TypeScript, JavaScript, and modern CSS; I also work with Angular, Vue, and RxJS. I am open to new approaches and tools when they help deliver cleaner, faster, and more enjoyable results.',
+      'I am Darya, a frontend engineer with extensive experience in the IT industry. I take an unconventional approach to my work: combining different domains, trying new tools, and finding solutions where familiar patterns are no longer enough.',
+      'I combine classical algorithmic programming with data visualization tools. I am especially interested in geolocation and map-based projects; I have built my own UI kit and am skilled in layout and markup.',
+      'When it helps, I use AI tools and vibe coding to speed up development and test ideas faster — without compromising quality.',
     ],
     highlights: [
       'UX focus — every pixel matters',
