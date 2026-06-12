@@ -1,4 +1,5 @@
 import { useLocale } from '../i18n/LocaleProvider'
+import { Reveal } from './Reveal'
 
 function HighlightItem({ text }: { text: string }) {
   const [title, ...rest] = text.split(' — ')
@@ -18,12 +19,15 @@ export function About() {
   return (
     <section id="about" className={`section about${TEMP_HIDE_AVATAR ? ' about--hide-visual' : ''}`}>
       <div className="container">
-        <div className="section__header">
-          <span className="section__label">{t.about.label}</span>
-          <h2 className="section__title">{t.about.title}</h2>
-        </div>
+        <Reveal>
+          <div className="section__header">
+            <span className="section__label">{t.about.label}</span>
+            <h2 className="section__title">{t.about.title}</h2>
+          </div>
+        </Reveal>
 
-        <div className="about__grid">
+        <Reveal delay={100}>
+          <div className="about__grid">
           <div className="about__visual">
             <div className="about__avatar">
               <span className="about__avatar-initials">ДМ</span>
@@ -44,7 +48,8 @@ export function About() {
               ))}
             </ul>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

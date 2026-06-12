@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
 import { skills } from '../data'
 import { useLocale } from '../i18n/LocaleProvider'
+import { Reveal } from './Reveal'
 
 export function Skills() {
   const { t } = useLocale()
@@ -8,14 +9,17 @@ export function Skills() {
   return (
     <section id="skills" className="section skills">
       <div className="container">
-        <div className="section__header">
-          <span className="section__label">{t.skills.label}</span>
-          <h2 className="section__title">{t.skills.title}</h2>
-        </div>
+        <Reveal>
+          <div className="section__header">
+            <span className="section__label">{t.skills.label}</span>
+            <h2 className="section__title">{t.skills.title}</h2>
+          </div>
+        </Reveal>
 
         <div className="skills__grid">
-          {skills.map((skill) => (
-            <div key={skill.name} className="skill">
+          {skills.map((skill, index) => (
+            <Reveal key={skill.name} delay={Math.min(index * 60, 360)}>
+              <div className="skill">
               <div className="skill__header">
                 <span className="skill__name">{skill.name}</span>
                 <span className="skill__level">{skill.level}%</span>
@@ -26,15 +30,18 @@ export function Skills() {
                   style={{ '--level': `${skill.level}%` } as CSSProperties}
                 />
               </div>
-            </div>
+              </div>
+            </Reveal>
           ))}
         </div>
 
-        <div className="skills__tags">
+        <Reveal delay={120}>
+          <div className="skills__tags">
           {['Git', 'Figma', 'Vite', 'Tailwind', 'REST API', 'Jest', 'Docker'].map((tag) => (
             <span key={tag} className="skills__tag">{tag}</span>
           ))}
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

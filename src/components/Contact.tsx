@@ -2,6 +2,7 @@ import type { MouseEvent } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { siteConfig } from '../data'
 import { useLocale } from '../i18n/LocaleProvider'
+import { Reveal } from './Reveal'
 
 export function Contact() {
   const { t } = useLocale()
@@ -9,7 +10,8 @@ export function Contact() {
   return (
     <section id="contact" className="section contact">
       <div className="container">
-        <div className="contact__card">
+        <Reveal>
+          <div className="contact__card">
           <div className="contact__content">
             <span className="section__label">{t.contact.label}</span>
             <h2 className="contact__title">{t.contact.title}</h2>
@@ -32,7 +34,8 @@ export function Contact() {
               </a>
             </div>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

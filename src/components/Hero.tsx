@@ -33,7 +33,7 @@ export function Hero() {
 
         <div className="hero__stats">
           <div className="hero__stat">
-            <span className="hero__stat-value">7<span className="hero__stat-plus">+</span></span>
+            <span className="hero__stat-value">8<span className="hero__stat-plus">+</span></span>
             <span className="hero__stat-label">{t.hero.yearsExperience}</span>
           </div>
           <div className="hero__stat-divider" aria-hidden="true" />
