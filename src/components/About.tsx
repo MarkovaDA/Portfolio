@@ -10,11 +10,13 @@ function HighlightItem({ text }: { text: string }) {
   )
 }
 
+const TEMP_HIDE_AVATAR = true
+
 export function About() {
   const { t } = useLocale()
 
   return (
-    <section id="about" className="section about">
+    <section id="about" className={`section about${TEMP_HIDE_AVATAR ? ' about--hide-visual' : ''}`}>
       <div className="container">
         <div className="section__header">
           <span className="section__label">{t.about.label}</span>

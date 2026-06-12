@@ -17,7 +17,7 @@ export function Hero() {
         <h1 className="hero__title">
           <span className="hero__name">{t.hero.name}</span>
           <br />
-          <em>{t.hero.role}</em>
+          <em className="hero__role">{t.hero.role}</em>
         </h1>
 
         <p className="hero__subtitle">{t.hero.tagline}</p>
@@ -26,24 +26,24 @@ export function Hero() {
           <a href="#projects" className="btn btn--primary">
             {t.hero.viewProjects}
           </a>
-          <a href="#contact" className="btn btn--ghost">
+          <a href="#contact" className="btn btn--ghost btn--ghost-gradient gradient-border">
             {t.hero.writeMe}
           </a>
         </div>
 
         <div className="hero__stats">
           <div className="hero__stat">
-            <span className="hero__stat-value">7+</span>
+            <span className="hero__stat-value">7<span className="hero__stat-plus">+</span></span>
             <span className="hero__stat-label">{t.hero.yearsExperience}</span>
           </div>
           <div className="hero__stat-divider" aria-hidden="true" />
           <div className="hero__stat">
-            <span className="hero__stat-value">20+</span>
+            <span className="hero__stat-value">20<span className="hero__stat-plus">+</span></span>
             <span className="hero__stat-label">{t.hero.projectsCount}</span>
           </div>
           <div className="hero__stat-divider" aria-hidden="true" />
           <div className="hero__stat">
-            <span className="hero__stat-value">100+</span>
+            <span className="hero__stat-value">100<span className="hero__stat-plus">+</span></span>
             <span className="hero__stat-label">{t.hero.happyClients}</span>
           </div>
         </div>

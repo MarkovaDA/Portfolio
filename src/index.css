@@ -41,10 +41,10 @@
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Typography scale */
-  --text-xs: 0.8125rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
+  --text-xs: 0.9375rem;
+  --text-sm: 1rem;
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
   --text-section: clamp(2rem, 4vw, 2.5rem);
   --text-hero: clamp(2.5rem, 5vw, 3.5rem);
   --text-display: clamp(3rem, 8vw, 4.5rem);
@@ -122,6 +122,43 @@ img {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+.gradient-border {
+  position: relative;
+  border: none;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.btn--ghost-gradient {
+  background: transparent;
+}
+
+.btn--ghost-gradient.gradient-border::before {
+  padding: 2px;
+}
+
+.btn--ghost-gradient:hover {
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
 .btn--large {
   padding: 1rem 2rem;
   font-size: var(--text-base);
@@ -135,6 +172,7 @@ img {
   right: 0;
   z-index: 100;
   height: var(--header-h);
+  overflow: visible;
   transition: background var(--transition), backdrop-filter var(--transition), border-color var(--transition);
 }
 
@@ -154,19 +192,25 @@ img {
 .header__logo {
   display: inline-flex;
   align-items: center;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 55%;
+  padding-block: 0.125rem;
   text-decoration: none;
+  overflow: visible;
 }
 
 .header__logo-word {
+  display: inline-block;
   font-family: var(--font-script);
-  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.125rem);
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.03em;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
   color: var(--text);
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
   transform-origin: left center;
+  padding: 0.1em 0.15em 0.05em 0;
   transition: transform var(--transition), color var(--transition);
 }
 
@@ -335,17 +379,21 @@ img {
   font-family: var(--font-sans);
   font-size: var(--text-display);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
+  max-width: 100%;
   margin-bottom: 1.5rem;
   animation: fadeUp 0.8s 0.1s ease both;
 }
 
-.hero__title em {
+.hero__role {
+  display: inline-block;
+  max-width: 100%;
   font-family: var(--font-display);
-  font-size: 0.72em;
+  font-size: clamp(1.35rem, 4.2vw, 2.35rem);
   font-style: italic;
   font-weight: 600;
+  line-height: 1.2;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -385,10 +433,16 @@ img {
 
 .hero__stat-value {
   display: block;
-  font-size: clamp(3rem, 8vw, 4.75rem);
+  font-size: clamp(3.25rem, 8.5vw, 5.125rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.hero__stat-plus {
+  font-size: 1.08em;
+  font-weight: 300;
   color: var(--text);
 }
 
@@ -482,6 +536,14 @@ img {
   overflow: visible;
 }
 
+.about--hide-visual .about__visual {
+  display: none;
+}
+
+.about--hide-visual .about__grid {
+  grid-template-columns: 1fr;
+}
+
 .about__avatar {
   position: relative;
   width: min(100%, 300px);
@@ -489,7 +551,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
   overflow: visible;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
@@ -499,16 +561,16 @@ img {
 .about__avatar-initials {
   display: inline-block;
   font-family: var(--font-script);
-  font-size: clamp(5rem, 10vw, 6.5rem);
+  font-size: clamp(4rem, 9vw, 5.75rem);
   font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: 0.04em;
-  padding: 0.15em 0.25em;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  padding: 0.12em 0.2em;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transform: rotate(-4deg);
+  transform: rotate(-3deg);
   user-select: none;
 }
 
@@ -631,11 +693,25 @@ img {
 }
 
 .project-strip__tags li {
-  padding: 0.25rem 0.75rem;
+  position: relative;
+  overflow: hidden;
+  padding: 0.35rem 0.875rem;
   font-size: var(--text-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 999px;
   color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.project-strip__tags li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  pointer-events: none;
 }
 
 .decor-arrow {
@@ -911,11 +987,25 @@ img {
 }
 
 .project-intro__tags li {
-  padding: 0.35rem 0.875rem;
+  position: relative;
+  overflow: hidden;
+  padding: 0.4rem 0.875rem;
   font-size: var(--text-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 999px;
   color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.project-intro__tags li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  pointer-events: none;
 }
 
 .project-intro__links {
@@ -1106,13 +1196,14 @@ img {
   font-size: var(--text-sm);
   color: var(--text-muted);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  transition: border-color var(--transition), color var(--transition);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  transition: color var(--transition), border-color var(--transition);
 }
 
 .skills__tag:hover {
-  border-color: rgba(99, 102, 241, 0.4);
   color: var(--text);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
 /* Contact */
@@ -1255,9 +1346,25 @@ img {
     justify-content: center;
   }
 
+  .header__logo {
+    max-width: calc(100% - 3.5rem);
+  }
+
+  .header__logo-word {
+    font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+  }
+
   .header__burger {
     display: flex;
     margin-left: auto;
+  }
+
+  .hero__role {
+    font-size: clamp(1.2rem, 5.5vw, 1.85rem);
+  }
+
+  .about__avatar-initials {
+    font-size: clamp(3.5rem, 16vw, 4.75rem);
   }
 
   .about__grid {
@@ -1279,7 +1386,7 @@ img {
   }
 
   .hero__stat-value {
-    font-size: clamp(2.75rem, 12vw, 3.75rem);
+    font-size: clamp(3rem, 12vw, 4.125rem);
   }
 
   .contact__card {
