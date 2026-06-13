@@ -57,7 +57,13 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <p>© {year} {siteConfig.name}. {t.footer.madeWith}</p>
+        <div className="footer__brand">
+          <p className="footer__copy">
+            <span className="footer__copy-year">© {year}</span>
+            <span className="footer__mark" aria-hidden="true">ДМ</span>
+            <span>{t.footer.madeWith}</span>
+          </p>
+        </div>
         <Link
           to="/"
           className="footer__top"
