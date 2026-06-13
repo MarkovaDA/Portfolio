@@ -27,7 +27,7 @@ export const ru: Messages = {
     badge: 'Открыта к новым проектам',
     name: 'Дарья Маркова',
     role: 'Frontend-разработчик',
-    tagline: 'Программирование как жизнь',
+    tagline: 'Когда frontend становится искусством',
     viewProjects: 'Смотреть проекты',
     writeMe: 'Написать мне',
     yearsExperience: 'лет опыта',

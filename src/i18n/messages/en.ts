@@ -27,7 +27,7 @@ export const en: Messages = {
     badge: 'Open to new projects',
     name: 'Darya Markova',
     role: 'Frontend Developer',
-    tagline: 'Programming as life',
+    tagline: 'When frontend becomes an art',
     viewProjects: 'View projects',
     writeMe: 'Contact me',
     yearsExperience: 'Years of experience',
