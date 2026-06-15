@@ -1349,9 +1349,8 @@ img {
 /* Contact */
 .contact__card {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 2rem;
   padding: 3.5rem;
   background: var(--bg-card);
@@ -1371,6 +1370,10 @@ img {
   background: var(--gradient);
 }
 
+.contact__content {
+  width: 100%;
+}
+
 .contact__title {
   font-family: var(--font-sans);
   font-size: var(--text-section);
@@ -1381,19 +1384,22 @@ img {
 .contact__desc {
   font-size: var(--text-base);
   color: var(--text-muted);
-  max-width: 400px;
+  max-width: none;
 }
 
 .contact__actions {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  align-items: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
 .contact__socials {
   display: flex;
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .contact__social {
@@ -1634,16 +1640,11 @@ img {
 
   .contact__card {
     padding: 2rem;
-    flex-direction: column;
     text-align: center;
   }
 
   .contact__actions {
     align-items: center;
-  }
-
-  .contact__desc {
-    margin-inline: auto;
   }
 
   .project-strip {

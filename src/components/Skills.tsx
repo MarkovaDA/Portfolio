@@ -37,7 +37,7 @@ export function Skills() {
 
         <Reveal delay={120}>
           <div className="skills__tags">
-          {['Git', 'Figma', 'Vite', 'Tailwind', 'REST API', 'Jest', 'Docker'].map((tag) => (
+          {['JavaScript', 'Typescript', 'React', 'Angular', 'Vue', 'webpack', 'git'].map((tag) => (
             <span key={tag} className="skills__tag">{tag}</span>
           ))}
           </div>

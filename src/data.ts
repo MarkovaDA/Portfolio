@@ -27,10 +27,10 @@ export interface Skill {
 
 export const siteConfig = {
   name: 'Portfolio',
-  email: 'hello@example.com',
-  github: 'https://github.com',
-  telegram: 'https://t.me',
-  linkedin: 'https://linkedin.com',
+  email: 'dmarkova.business@gmail.com',
+  github: 'https://github.com/MarkovaDA/',
+  telegram: 'https://t.me/darya_todreams',
+  linkedin: 'https://www.linkedin.com/in/darya-markova/',
 }
 
 export const projects: Project[] = [
@@ -485,10 +485,20 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export const skills: Skill[] = [
-  { name: 'HTML / CSS', level: 95 },
-  { name: 'JavaScript / TypeScript', level: 90 },
-  { name: 'React', level: 88 },
-  { name: 'UI / UX Design', level: 75 },
-  { name: 'Node.js', level: 70 },
+  { name: 'JavaScript / TypeScript', level: 100 },
+  { name: 'HTML / CSS', level: 100 },
+  { name: 'React', level: 95 },
+  { name: 'Angular', level: 95 },
+  { name: 'Vue.js', level: 95 },
+  { name: 'UI / UX Design', level: 95 },
+  { name: 'Three.js', level: 75 },
+  { name: 'Node.js', level: 80 },
+  { name: 'Next.js', level: 70 },
+  { name: 'Webpack', level: 90 },
+  { name: 'Git', level: 90 },
+  { name: 'Реактивное программирование', level: 92 },
+  { name: 'Адаптивная вёрстка', level: 100 },
+  { name: 'GraphQL', level: 75 },
+  { name: 'Webdesign', level: 70 },
 ]
 
