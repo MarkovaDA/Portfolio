@@ -34,7 +34,11 @@
   --surface-overlay: rgba(255, 255, 255, 0.02);
   --header-scrolled-bg: rgba(10, 10, 15, 0.85);
   --toolbar-bg: rgba(10, 10, 15, 0.92);
-  --mobile-nav-bg: rgba(10, 10, 15, 0.97);
+  --mobile-nav-bg: #ffffff;
+  --mobile-nav-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+  --header-menu-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --mobile-nav-text: #1a1a2e;
+  --mobile-nav-text-muted: #5c5c72;
   --btn-primary-bg: #f0f0f5;
   --btn-primary-bg-hover: #ffffff;
   --btn-primary-text: #0a0a0f;
@@ -87,7 +91,11 @@
   --surface-overlay: rgba(0, 0, 0, 0.02);
   --header-scrolled-bg: rgba(248, 249, 252, 0.9);
   --toolbar-bg: rgba(248, 249, 252, 0.95);
-  --mobile-nav-bg: rgba(248, 249, 252, 0.98);
+  --mobile-nav-bg: #ffffff;
+  --mobile-nav-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+  --header-menu-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --mobile-nav-text: #1a1a2e;
+  --mobile-nav-text-muted: #5c5c72;
   --btn-primary-bg: var(--gradient);
   --btn-primary-bg-hover: linear-gradient(135deg, #5558e8 0%, #9a4de6 50%, #e03d8a 100%);
   --btn-primary-text: #ffffff;
@@ -372,7 +380,8 @@ img {
   padding: 0.2rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: var(--surface-subtle);
+  background: var(--bg-card);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .lang-switch__btn {
@@ -1500,6 +1509,20 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header--menu-open {
+    background: var(--mobile-nav-bg);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--header-menu-shadow);
+  }
+
+  .header--menu-open .header__logo-word {
+    color: var(--mobile-nav-text);
+  }
+
+  .header--menu-open .header__burger span {
+    background: var(--mobile-nav-text);
+  }
+
   .header__nav {
     position: fixed;
     inset: var(--header-h) 0 0 0;
@@ -1508,7 +1531,8 @@ img {
     justify-content: center;
     gap: 2rem;
     background: var(--mobile-nav-bg);
-    backdrop-filter: blur(16px);
+    box-shadow: var(--mobile-nav-shadow);
+    border-left: 1px solid var(--border);
     transform: translateX(100%);
     transition: transform var(--transition);
   }
@@ -1519,6 +1543,11 @@ img {
 
   .header__nav .header__link {
     font-size: var(--text-lg);
+    color: var(--mobile-nav-text-muted);
+  }
+
+  .header__nav .header__link:hover {
+    color: var(--mobile-nav-text);
   }
 
   .header__actions {

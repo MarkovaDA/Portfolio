@@ -22,7 +22,7 @@ export function Header() {
   }, [menuOpen])
 
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${scrolled ? 'header--scrolled' : ''} ${menuOpen ? 'header--menu-open' : ''}`}>
       <div className="container header__inner">
         <Link to="/" className="header__logo" aria-label={siteConfig.name}>
           <span className="header__logo-word">{siteConfig.name}</span>
