@@ -35,8 +35,8 @@
   --header-scrolled-bg: rgba(10, 10, 15, 0.85);
   --toolbar-bg: rgba(10, 10, 15, 0.92);
   --mobile-nav-bg: #ffffff;
-  --mobile-nav-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
-  --header-menu-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --mobile-nav-shadow: 0 8px 40px rgba(0, 0, 0, 0.14), 0 2px 12px rgba(0, 0, 0, 0.08);
+  --header-menu-shadow: 0 4px 24px rgba(0, 0, 0, 0.14);
   --mobile-nav-text: #1a1a2e;
   --mobile-nav-text-muted: #5c5c72;
   --btn-primary-bg: #f0f0f5;
@@ -92,8 +92,8 @@
   --header-scrolled-bg: rgba(248, 249, 252, 0.9);
   --toolbar-bg: rgba(248, 249, 252, 0.95);
   --mobile-nav-bg: #ffffff;
-  --mobile-nav-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
-  --header-menu-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --mobile-nav-shadow: 0 8px 40px rgba(0, 0, 0, 0.14), 0 2px 12px rgba(0, 0, 0, 0.08);
+  --header-menu-shadow: 0 4px 24px rgba(0, 0, 0, 0.14);
   --mobile-nav-text: #1a1a2e;
   --mobile-nav-text-muted: #5c5c72;
   --btn-primary-bg: var(--gradient);
@@ -1509,9 +1509,20 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .header--menu-open {
-    background: var(--mobile-nav-bg);
-    border-bottom: 1px solid var(--border);
+  .header__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    padding: 0;
+    border: none;
+    background: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+  }
+
+  .header.header--menu-open {
+    background-color: #ffffff;
+    backdrop-filter: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: var(--header-menu-shadow);
   }
 
@@ -1526,15 +1537,20 @@ img {
   .header__nav {
     position: fixed;
     inset: var(--header-h) 0 0 0;
+    z-index: 101;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    background: var(--mobile-nav-bg);
+    background-color: #ffffff;
     box-shadow: var(--mobile-nav-shadow);
-    border-left: 1px solid var(--border);
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
     transform: translateX(100%);
     transition: transform var(--transition);
+  }
+
+  .header__nav.header__nav--open {
+    background-color: #ffffff;
   }
 
   .header__nav--open {
@@ -1548,6 +1564,18 @@ img {
 
   .header__nav .header__link:hover {
     color: var(--mobile-nav-text);
+  }
+
+  .header__nav .theme-switch {
+    color: var(--mobile-nav-text-muted);
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .header__nav .theme-switch:hover {
+    color: var(--mobile-nav-text);
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.14);
   }
 
   .header__actions {

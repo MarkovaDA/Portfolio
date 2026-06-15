@@ -22,7 +22,16 @@ export function Header() {
   }, [menuOpen])
 
   return (
-    <header className={`header ${scrolled ? 'header--scrolled' : ''} ${menuOpen ? 'header--menu-open' : ''}`}>
+    <>
+      {menuOpen && (
+        <button
+          type="button"
+          className="header__backdrop"
+          onClick={() => setMenuOpen(false)}
+          aria-label={t.a11y.closeMenu}
+        />
+      )}
+      <header className={`header ${scrolled ? 'header--scrolled' : ''} ${menuOpen ? 'header--menu-open' : ''}`}>
       <div className="container header__inner">
         <Link to="/" className="header__logo" aria-label={siteConfig.name}>
           <span className="header__logo-word">{siteConfig.name}</span>
@@ -64,5 +73,6 @@ export function Header() {
         </button>
       </div>
     </header>
+    </>
   )
 }
