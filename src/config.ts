@@ -15,3 +15,9 @@ export function toRouterBasename(path: string = SITE_BASE): string {
   if (!path || path === '/') return ''
   return path.replace(/\/+$/, '')
 }
+
+/** Путь к файлу из `public/` с учётом base (GitHub Pages / Vercel). */
+export function assetPath(path: string): string {
+  const normalized = path.replace(/^\/+/, '')
+  return `${import.meta.env.BASE_URL}${normalized}`
+}

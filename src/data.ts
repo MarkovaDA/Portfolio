@@ -35,6 +35,45 @@ export const siteConfig = {
 
 export const projects: Project[] = [
   {
+    slug: 'drawing-board',
+    title: 'Drawing Board',
+    description: 'Виртуальная доска для рисования наподобие Miro',
+    fullDescription: `Интерактивное веб-приложение на TypeScript + Pixi.js + CanvasKit (Skia) для рисования и редактирования сцен с экспортом в PDF.
+      <p>
+        <br />
+        <b>
+          Функции приложения:
+        </b>
+      </p>
+
+      <ul>
+        <li>отображает несколько подготовленных сцен (демо, фигуры, линии);</li>
+        <li>поддерживает переключение сцен вручную и автопереключение;</li>
+        <li>позволяет перетаскивать объекты мышью; </li>
+        <li> добавляет случайные фигуры на активную сцену;</li>
+        <li>очищает холст;</li>
+        <li>экспортирует текущую сцену в PDF;</li>
+        <li>синхронизирует правую панель предпросмотра со сценой Pixi;</li>
+        <li>поддерживает взаимодействие (drag) и с правой Skia-панели через проксирование pointer-событий.</li>
+      </ul>
+    `,
+    tags: [
+      'TypeScript', 'Pixi.JS', 'CanvasKit', 'Skia', 'Vite'
+    ],
+    repoUrl: 'https://github.com/MarkovaDA/SBoardTestTask',
+    publicUrl: 'https://markovada.github.io/SBoardTestTask/',
+    slots: [{
+      id: 'main',
+      label: 'Главный экран приложения',
+      summary: 'Интерфейс состоит из панели управления сверху и двух canvas-панелей снизу: интерактивная сцена Pixi слева и её превью Skia справа. Доступны экспорт в PDF, добавление/очистка фигур и переключение сцен.',
+      image: 'images/sboard-demo.png',
+      techStack: {
+        title: 'TypeScript, Pixi.JS, CanvasKit, Skia, Vite',
+        description: 'Технологический стек: TypeScript + Vite, графика на Pixi.js и CanvasKit (Skia PDF)'
+      }
+    }],
+  },
+  /*{
     slug: 'ecommerce-dashboard',
     title: 'E-commerce Dashboard',
     description: 'Админ-панель с аналитикой продаж, управлением товарами и real-time уведомлениями.',
@@ -477,7 +516,7 @@ export const projects: Project[] = [
         },
       },
     ],
-  },
+  }, */
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {

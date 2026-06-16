@@ -1,6 +1,7 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { Layout } from '../components/Layout'
 import { ProjectToolbar } from '../components/ProjectToolbar'
+import { assetPath } from '../config'
 import type { Project, ProjectSlot as ProjectSlotData } from '../data'
 import { useLocale } from '../i18n/LocaleProvider'
 
@@ -13,7 +14,10 @@ function ProjectIntro({ project, index }: { project: Project; index: number }) {
         {String(index + 1).padStart(2, '0')}
       </span>
       <h1 className="project-intro__title">{project.title}</h1>
-      <p className="project-intro__desc">{project.fullDescription}</p>
+      <div
+        className="project-intro__desc"
+        dangerouslySetInnerHTML={{ __html: project.fullDescription }}
+      />
 
       <ul className="project-intro__tags">
         {project.tags.map((tag) => (
@@ -56,7 +60,7 @@ function ProjectSlot({
     <figure className="project-slot">
       <div className="project-slot__frame" data-slot={index + 1}>
         {slot.image ? (
-          <img src={slot.image} alt={slot.label} className="project-slot__image" />
+          <img src={assetPath(slot.image)} alt={slot.label} className="project-slot__image" />
         ) : (
           <span className="project-slot__placeholder">{screenshotLabel}</span>
         )}
