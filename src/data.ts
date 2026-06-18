@@ -138,7 +138,7 @@ export const projects: Project[] = [
     description: 'Интерактивная 3D-сцена на Three.js и Vite для просмотра 3D-модели Barbie',
     fullDescription: `
     ThreeJSBarbieModel — веб-приложение для интерактивного просмотра 3D-моделей Barbie и других женских персонажей в браузере. Проект построен на Three.js и Vite и имитирует витринную сцену: персонаж стоит на белом подиуме в затемнённом пространстве с мягким освещением, а пользователь может вращать камеру вокруг модели и переключать режимы движения.
-    <br /><br />
+    <br />
     <p>
       <i>*Проект находится в стадии разработки</i>
     </p>
@@ -171,6 +171,19 @@ export const projects: Project[] = [
         description: 'Технологический стек: Three.js + HTML + Vite',
       }
     }]
+  },
+  {
+    slug: 'worklog',
+    title: 'WorkLog',
+    description: 'Система учёта строительных работ',
+    fullDescription: `
+      WorkLog — система учёта рабочего времени и проектов, разработанная на Angular и TypeScript. Она позволяет пользователям отслеживать свою деятельность, планировать задачи и анализировать статистику.
+      <br />
+      `,
+      tags: ['Angular', 'TypeScript', 'HTML'],
+      repoUrl: 'https://github.com/MarkovaDA/WorkLog/',
+      publicUrl: 'https://markovada.github.io/WorkLog/',
+      slots: [],
   }
 ]
 
@@ -187,12 +200,16 @@ export const skills: Skill[] = [
   { name: 'UI / UX Design', level: 95 },
   { name: 'Three.js', level: 75 },
   { name: 'Node.js', level: 80 },
+  { name: 'GraphQL', level: 75 },
   { name: 'Next.js', level: 70 },
   { name: 'Webpack', level: 90 },
+  { name: 'Vite', level: 95 },
   { name: 'Git', level: 90 },
+  { name: 'Docker', level: 100 },
   { name: 'Реактивное программирование', level: 92 },
   { name: 'Адаптивная вёрстка', level: 100 },
-  { name: 'GraphQL', level: 75 },
-  { name: 'Webdesign', level: 70 },
+  { name: 'Webdesign', level: 85 },
+  { name: 'Storybook', level: 90 },
+  { name: 'Material UI', level: 100 }
 ]
 
