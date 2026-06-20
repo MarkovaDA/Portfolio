@@ -175,15 +175,36 @@ export const projects: Project[] = [
   {
     slug: 'worklog',
     title: 'WorkLog',
-    description: 'Система учёта строительных работ',
+    description: 'Веб-приложение для учёта выполненных работ на строительном объекте',
     fullDescription: `
-      WorkLog — система учёта рабочего времени и проектов, разработанная на Angular и TypeScript. Она позволяет пользователям отслеживать свою деятельность, планировать задачи и анализировать статистику.
-      <br />
+        Система позволяет вести записи с датой, типом работ, объёмом, единицей измерения и исполнителем: просматривать в таблице, фильтровать и сортировать по дате, добавлять, редактировать и удалять записи. Справочник типов работ подгружается из JSON.
+        Локально можно запускать через npm или Docker Compose; в production на GitHub Pages доступен только фронтенд с демо-данными.
       `,
-      tags: ['Angular', 'TypeScript', 'HTML'],
-      repoUrl: 'https://github.com/MarkovaDA/WorkLog/',
-      publicUrl: 'https://markovada.github.io/WorkLog/',
-      slots: [],
+      tags: ['React', 'TypeScript', 'Material UI', 'Node.js' , 'Express', 'SQLite' , 'Drizzle ORM', 'Vite'],
+      repoUrl: 'https://markovada.github.io/Loogbook/',
+      publicUrl: 'https://markovada.github.io/Loogbook/',
+      slots: [
+        {
+          id: 'main',
+          label: 'Главный экран приложения',
+          summary: 'Интерфейс состоит из таблицы с записями и справочника типов работ',
+          image: 'images/worklog-main-demo.png',
+          techStack: {
+            title: 'React, TypeScript, Material UI, Node.js, Express, SQLite, Drizzle ORM, Vite',
+            description: 'Технологический стек: React + TypeScript + Material UI + Node.js + Express + SQLite + Drizzle ORM + Vite',
+          }
+      }, 
+      {
+          id: 'add',
+          label: 'Форма добавления новой записи',
+          summary: 'Форма добавления новой записи с полями для ввода даты, типа работ, объёма, единицы измерения и исполнителя',
+          image: 'images/worklog-add-form-demo.png',
+          techStack: {
+            title: 'React, TypeScript, Material UI, Node.js, Express, SQLite, Drizzle ORM, Vite',
+            description: 'Технологический стек: React + TypeScript + Material UI + Node.js + Express + SQLite + Drizzle ORM + Vite',
+          }
+      }
+    ],
   }
 ]
 
