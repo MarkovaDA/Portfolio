@@ -1,10 +1,9 @@
 import type { CSSProperties } from 'react'
-import { skills } from '../data'
 import { useLocale } from '../i18n/LocaleProvider'
 import { Reveal } from './Reveal'
 
 export function Skills() {
-  const { t } = useLocale()
+  const { t, skills } = useLocale()
 
   return (
     <section id="skills" className="section skills">

@@ -7,10 +7,11 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import type { Project } from '../data'
+import type { Project, Skill } from '../data'
 import {
   getLocalizedProjectBySlug,
   getLocalizedProjects,
+  getLocalizedSkills,
   getMessages,
   getNavLinks,
   type Locale,
@@ -26,6 +27,7 @@ interface LocaleContextValue {
   t: Messages
   navLinks: NavLink[]
   projects: Project[]
+  skills: Skill[]
   getProjectBySlug: (slug: string) => Project | undefined
 }
 
@@ -48,6 +50,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const t = useMemo(() => getMessages(locale), [locale])
   const navLinks = useMemo(() => getNavLinks(locale), [locale])
   const projects = useMemo(() => getLocalizedProjects(locale), [locale])
+  const skills = useMemo(() => getLocalizedSkills(locale), [locale])
 
   const getProjectBySlug = useCallback(
     (slug: string) => getLocalizedProjectBySlug(slug, locale),
@@ -62,8 +65,8 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   }, [locale, t.meta.description])
 
   const value = useMemo(
-    () => ({ locale, setLocale, t, navLinks, projects, getProjectBySlug }),
-    [locale, setLocale, t, navLinks, projects, getProjectBySlug],
+    () => ({ locale, setLocale, t, navLinks, projects, skills, getProjectBySlug }),
+    [locale, setLocale, t, navLinks, projects, skills, getProjectBySlug],
   )
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>

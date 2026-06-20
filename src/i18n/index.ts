@@ -2,8 +2,9 @@ import type { Locale, Messages, NavLink } from './types'
 import { en } from './messages/en'
 import { ru } from './messages/ru'
 import { projectsEn } from './projects/en'
-import type { Project } from '../data'
-import { projects as projectsRu } from '../data'
+import { skillsEn } from './skills/en'
+import type { Project, Skill } from '../data'
+import { projects as projectsRu, skills as skillsRu } from '../data'
 
 const messages: Record<Locale, Messages> = { ru, en }
 
@@ -48,6 +49,15 @@ export function getLocalizedProjects(locale: Locale): Project[] {
 
 export function getLocalizedProjectBySlug(slug: string, locale: Locale): Project | undefined {
   return getLocalizedProjects(locale).find((p) => p.slug === slug)
+}
+
+export function getLocalizedSkills(locale: Locale): Skill[] {
+  if (locale === 'ru') return skillsRu
+
+  return skillsRu.map((skill) => ({
+    ...skill,
+    name: skillsEn[skill.name] ?? skill.name,
+  }))
 }
 
 export type { Locale, Messages, NavLink }
