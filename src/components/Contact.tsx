@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { siteConfig } from '../data'
 import { useLocale } from '../i18n/LocaleProvider'
 import { Reveal } from './Reveal'
+import { SocialIcon } from './SocialIcon'
 
 export function Contact() {
   const { t } = useLocale()
@@ -23,14 +24,32 @@ export function Contact() {
               {siteConfig.email}
             </a>
             <div className="contact__socials">
-              <a href={siteConfig.github} target="_blank" rel="noreferrer" className="contact__social">
-                GitHub
+              <a
+                href={siteConfig.github}
+                target="_blank"
+                rel="noreferrer"
+                className="contact__social contact__social--github"
+              >
+                <SocialIcon name="github" />
+                <span>GitHub</span>
               </a>
-              <a href={siteConfig.telegram} target="_blank" rel="noreferrer" className="contact__social">
-                Telegram
+              <a
+                href={siteConfig.telegram}
+                target="_blank"
+                rel="noreferrer"
+                className="contact__social contact__social--telegram"
+              >
+                <SocialIcon name="telegram" />
+                <span>Telegram</span>
               </a>
-              <a href={siteConfig.linkedin} target="_blank" rel="noreferrer" className="contact__social">
-                LinkedIn
+              <a
+                href={siteConfig.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="contact__social contact__social--linkedin"
+              >
+                <SocialIcon name="linkedin" />
+                <span>LinkedIn</span>
               </a>
             </div>
           </div>

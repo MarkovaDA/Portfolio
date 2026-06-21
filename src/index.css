@@ -1444,13 +1444,41 @@ img {
 }
 
 .contact__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-size: var(--text-sm);
   color: var(--text-muted);
   transition: color var(--transition);
 }
 
+.contact__social-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+  opacity: 0.85;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
 .contact__social:hover {
   color: var(--accent-light);
+}
+
+.contact__social:hover .contact__social-icon {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.contact__social--telegram:hover {
+  color: #26a5e4;
+}
+
+.contact__social--linkedin:hover {
+  color: #0a66c2;
+}
+
+.contact__social--github:hover {
+  color: var(--text);
 }
 
 /* Footer */
