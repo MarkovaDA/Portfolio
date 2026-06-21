@@ -134,4 +134,20 @@ export const projectsEn: Record<string, ProjectTranslation> = {
       },
     },
   },
+  'travel-app': {
+    title: 'Travel App',
+    description:
+      'A web editor for travelers to highlight countries and place markers on a map, set their names, colors, and descriptions. Data is saved locally in the user\'s browser.',
+    fullDescription: `
+      A single-page web application for working with an interactive map.
+      Users can create and edit country regions, add markers with icons and labels,
+      and control map zoom via the context menu and control panel.
+    `,
+    slots: {
+      main: {
+        label: 'Main application screen',
+        summary: 'The interface consists of a map and a control panel',
+      },
+    },
+  },
 }

@@ -205,6 +205,29 @@ export const projects: Project[] = [
           }
       }
     ],
+  },
+  {
+    slug: 'travel-app',
+    title: 'Travel App',
+    description: 'Веб-редактор для путешественника, позволяющий выделять страны и ставить маркеры на карте, задавать им названия, цвета и описания. Данные сохраняются локально в браузере пользователя.',
+    fullDescription: `
+      Одностраничное веб-приложение для работы с интерактивной картой. 
+      Пользователь может создавать и редактировать области стран, добавлять маркеры с иконками и подписями, 
+      управлять масштабом карты через контекстное меню и панель управления.
+    `,
+    tags: ['JavaScript', 'JQuery', 'IndexedDB', 'OpenStreetMap', 'OpenLayers', 'Webpack'],
+    repoUrl: 'https://github.com/MarkovaDA/TravelApp/',
+    publicUrl: 'https://markovada.github.io/TravelApp/',
+    slots: [{
+      id: 'main',
+      label: 'Главный экран приложения',
+      summary: 'Интерфейс состоит из карты и панели управления',
+      image: 'images/travelapp-main-demo.png',  
+      techStack: {
+        title: 'JavaScript, JQuery, IndexedDB, OpenStreetMap, OpenLayers, Webpack',
+        description: 'Технологический стек: JavaScript + JQuery + IndexedDB + OpenStreetMap + OpenLayers + Webpack',
+      }
+    }],
   }
 ]
 
