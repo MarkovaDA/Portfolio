@@ -216,7 +216,7 @@ export const projects: Project[] = [
       управлять масштабом карты через контекстное меню и панель управления.
     `,
     tags: ['JavaScript', 'JQuery', 'IndexedDB', 'OpenStreetMap', 'OpenLayers', 'Webpack'],
-    repoUrl: 'https://github.com/MarkovaDA/TravelApp/',
+    repoUrl: 'https://github.com/MarkovaDA/TravelApp',
     publicUrl: 'https://markovada.github.io/TravelApp/',
     slots: [{
       id: 'main',
