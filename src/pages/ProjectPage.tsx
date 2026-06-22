@@ -99,17 +99,19 @@ export function ProjectPage() {
             <div className="project-page__article">
               <ProjectIntro project={project} index={currentIndex} />
 
-              <section className="project-page__slots" aria-label={t.a11y.projectScreens}>
-                <h2 className="project-page__slots-title">{t.projectPage.screensTitle}</h2>
-                {project.slots.map((slot, index) => (
-                  <ProjectSlot
-                    key={slot.id}
-                    slot={slot}
-                    index={index}
-                    screenshotLabel={t.projectPage.screenshot}
-                  />
-                ))}
-              </section>
+              {project.slots.length > 0 && (
+                <section className="project-page__slots" aria-label={t.a11y.projectScreens}>
+                  <h2 className="project-page__slots-title">{t.projectPage.screensTitle}</h2>
+                  {project.slots.map((slot, index) => (
+                    <ProjectSlot
+                      key={slot.id}
+                      slot={slot}
+                      index={index}
+                      screenshotLabel={t.projectPage.screenshot}
+                    />
+                  ))}
+                </section>
+              )}
             </div>
           </div>
         </div>

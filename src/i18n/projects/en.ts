@@ -150,4 +150,12 @@ export const projectsEn: Record<string, ProjectTranslation> = {
       },
     },
   },
+  'landing-page': {
+    title: 'Landing Page',
+    description: 'Landing page example',
+    fullDescription: `
+      Responsive landing page for the "Club of Four Horses" based on a Figma design: HTML/CSS/JS layout, carousels, marquee, and scroll animations.
+    `,
+    slots: {},
+  },
 }

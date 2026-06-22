@@ -228,7 +228,19 @@ export const projects: Project[] = [
         description: 'Технологический стек: JavaScript + JQuery + IndexedDB + OpenStreetMap + OpenLayers + Webpack',
       }
     }],
-  }
+  },
+  {
+    slug: 'landing-page',
+    title: 'Landing Page',
+    description: 'Пример лэндинг-страницы',
+    fullDescription: `
+      Адаптивный лендинг «Клуб четырёх коней» по макету Figma: вёрстка HTML/CSS/JS, карусели, бегущая строка и анимации при скролле. 
+    `,
+    slots: [],
+    repoUrl: 'https://github.com/MarkovaDA/LandingPageDemo',
+    publicUrl: 'https://markovada.github.io/LandingPageDemo/',
+    tags: ['HTML5', 'CSS3 (модульные файлы, Flexbox, Grid, CSS-переменные, media queries)', 'Vanilla JavaScript'],
+  },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {
