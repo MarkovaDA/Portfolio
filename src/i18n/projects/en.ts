@@ -158,4 +158,17 @@ export const projectsEn: Record<string, ProjectTranslation> = {
     `,
     slots: {},
   },
+  calendar: {
+    title: 'Calendar',
+    description: 'Traditional `Calendar` widget',
+    fullDescription: `
+      A single-page calendar web application built with Vue 3 and Vite. Displays the current month, highlights today's date, and lets you navigate between months. Material Design-style interface with dark theme support.
+    `,
+    slots: {
+      main: {
+        label: 'Main and only calendar screen',
+        summary: 'The interface consists of a calendar and control buttons',
+      },
+    },
+  },
 }

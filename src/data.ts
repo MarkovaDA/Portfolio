@@ -241,6 +241,29 @@ export const projects: Project[] = [
     publicUrl: 'https://markovada.github.io/LandingPageDemo/',
     tags: ['HTML5', 'CSS3 (модульные файлы, Flexbox, Grid, CSS-переменные, media queries)', 'Vanilla JavaScript'],
   },
+  {
+    slug: 'calendar',
+    title: 'Calendar',
+    description: 'Традиционный виджет `Календарь`',
+    publicUrl: 'https://markovada.github.io/VueCalendarApp/',
+    repoUrl: 'https://github.com/MarkovaDA/VueCalendarApp/',
+    tags: ['Vue.js', 'Vuex', 'Vue Router', 'Vue I18n', 'Vue CLI', 'Vue Test Utils', 'Vuex', 'Vue Router', 'Vue I18n', 'Vue CLI', 'Vue Test Utils'],
+    slots: [
+      {
+        id: 'main',
+        label: 'Главный и единственный экран календаря',
+        summary: 'Интерфейс состоит из календаря и кнопок управления им',
+        image: 'images/vue-calendar-demo.png',  
+        techStack: {
+          title: 'Vue 3, Vite 8, JavaScript, CSS, Vitest',
+          description: 'Технологический стек: Vue 3 + JavaScript + Vitest',
+        },
+      }
+    ],
+    fullDescription: `
+      Одностраничное веб-приложение-календарь на Vue 3 и Vite. Показывает текущий месяц, выделяет сегодняшний день и позволяет переключаться между месяцами. Интерфейс в стиле Material Design, с поддержкой тёмной темы.
+    `,
+  },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {
