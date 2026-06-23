@@ -247,7 +247,7 @@ export const projects: Project[] = [
     description: 'Традиционный виджет `Календарь`',
     publicUrl: 'https://markovada.github.io/VueCalendarApp/',
     repoUrl: 'https://github.com/MarkovaDA/VueCalendarApp/',
-    tags: ['Vue.js', 'Vuex', 'Vue Router', 'Vue I18n', 'Vue CLI', 'Vue Test Utils', 'Vuex', 'Vue Router', 'Vue I18n', 'Vue CLI', 'Vue Test Utils'],
+    tags: ['Vue.js', 'Vue I18n', 'Vue CLI', 'Vue Test Utils'],
     slots: [
       {
         id: 'main',
