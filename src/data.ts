@@ -247,7 +247,7 @@ export const projects: Project[] = [
     description: 'Традиционный виджет `Календарь`',
     publicUrl: 'https://markovada.github.io/VueCalendarApp/',
     repoUrl: 'https://github.com/MarkovaDA/VueCalendarApp/',
-    tags: ['Vue.js', 'Vue I18n', 'Vue CLI', 'Vue Test Utils'],
+    tags: ['Vue.js', 'Vue CLI', 'Vue Test Utils'],
     slots: [
       {
         id: 'main',
@@ -263,6 +263,27 @@ export const projects: Project[] = [
     fullDescription: `
       Одностраничное веб-приложение-календарь на Vue 3 и Vite. Показывает текущий месяц, выделяет сегодняшний день и позволяет переключаться между месяцами. Интерфейс в стиле Material Design, с поддержкой тёмной темы.
     `,
+  },
+  {
+    slug: 'next-js-demo',
+    title: 'Next.js Learning Project',
+    description: 'Учебный проект на Next.js',
+    fullDescription: `
+      Учебный проект на Next.js
+    `,
+    tags: ['Next.js', 'React', 'TypeScript', 'Vite'],
+    repoUrl: 'https://github.com/MarkovaDA/NextJSPages',
+    publicUrl: 'https://markovada.github.io/NextJSPages/',
+    slots: [{
+      id: 'main',
+      label: 'Главный экран приложения',
+      summary: 'Интерфейс состоит из отдельных страниц - учебных разделов',
+      image: 'images/nextjs-learning-project-demo.png',
+      techStack: {
+        title: 'Next.js, React, TypeScript, Vite',
+        description: 'Технологический стек: Next.js + React + TypeScript + Vite',
+      }
+    }],
   },
 ]
 

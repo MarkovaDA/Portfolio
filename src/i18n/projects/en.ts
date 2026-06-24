@@ -171,4 +171,17 @@ export const projectsEn: Record<string, ProjectTranslation> = {
       },
     },
   },
+  'next-js-demo': {
+    title: 'Next.js Learning Project',
+    description: 'Learning project built with Next.js',
+    fullDescription: `
+      A learning project built with Next.js.
+    `,
+    slots: {
+      main: {
+        label: 'Main application screen',
+        summary: 'The interface consists of separate pages — learning sections',
+      },
+    },
+  },
 }
