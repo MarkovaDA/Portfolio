@@ -173,6 +173,41 @@ export const projects: Project[] = [
     }]
   },
   {
+    slug: 'planet-model',
+    title: '3D-модель Земли',
+    description: 'Интерактивная 3D-сцена на Three.js и Vite для просмотра модели планеты Земля',
+    fullDescription: `
+      EarthPlanetModel — веб-приложение для интерактивного просмотра 3D-модели Земли в браузере. Проект построен на Three.js и Vite: планета отображается в космической сцене со звёздным фоном, слоем облаков и освещением, имитирующим солнце. Пользователь может вращать камеру вокруг планеты и управлять авто-вращением.
+      <p>
+        <br />
+        <b>
+          Основные возможности:
+        </b>
+      </p>
+      <ul>
+        <li>Интерактивная 3D-сцена на Three.js</li>
+        <li>Текстурированная модель Земли с нормалями и бликами</li>
+        <li>Отдельный слой облаков с независимым вращением</li>
+        <li>Звёздный фон</li>
+        <li>Вращение камеры вокруг планеты мышью и колесом прокрутки</li>
+        <li>Панель управления: авто-вращение и скорость</li>
+      </ul>
+    `,
+    tags: ['Three.js', 'Vite', 'TypeScript'],
+    repoUrl: 'https://github.com/MarkovaDA/ThreeJSPlanet/',
+    publicUrl: 'https://markovada.github.io/ThreeJSPlanet/',
+    slots: [{
+      id: 'main',
+      label: 'Главный экран приложения',
+      summary: 'Интерфейс состоит из 3D-сцены и панели управления',
+      image: 'images/planet-model-demo.png',
+      techStack: {
+        title: 'Three.js, Vite, TypeScript',
+        description: 'Технологический стек: Three.js + Vite + TypeScript',
+      }
+    }],
+  },
+  {
     slug: 'worklog',
     title: 'WorkLog',
     description: 'Веб-приложение для учёта выполненных работ на строительном объекте',

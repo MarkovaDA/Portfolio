@@ -115,6 +115,19 @@ export const projectsEn: Record<string, ProjectTranslation> = {
       },
     },
   },
+  'planet-model': {
+    title: 'Earth Planet Model',
+    description: '3D Earth is our planet model',
+    fullDescription: `
+      EarthPlanetModel is a web application for interactively viewing a Earth planet model in the browser. Built with Three.js and Vite, it simulates a display scene: the planet is displayed in a 3D scene with a camera that can be rotated around the planet.
+    `,
+    slots: {
+      main: {
+        label: 'Main application screen',
+        summary: 'The interface consists of a 3D scene and a control panel',
+      },
+    }
+  },
   worklog: {
     title: 'WorkLog',
     description: 'Web application for tracking completed work on a construction site',
