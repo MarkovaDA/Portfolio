@@ -1,6 +1,14 @@
 import type { ProjectTranslation } from '../types'
 
 export const projectsEn: Record<string, ProjectTranslation> = {
+  'cargo-auctions': {
+    title: 'Cargo Auctions',
+    description:
+      'SPA for cargo auctions: filtered list, auction details, bid history, and a dedicated bidding screen',
+    fullDescription:
+      'Cargo Auctions is a frontend application for working with cargo auctions. Users can browse auctions (table or cards), filter and paginate results, open an auction card with details and bid history, and place a bid via a dedicated link.',
+    slots: {},
+  },
   'drawing-board': {
     title: 'Drawing Board',
     description: 'Virtual drawing board similar to Miro',

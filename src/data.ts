@@ -35,6 +35,16 @@ export const siteConfig = {
 
 export const projects: Project[] = [
   {
+    slug: 'cargo-auctions',
+    title: 'Cargo Auctions',
+    description: 'SPA для грузовых аукционов: список с фильтрами, карточка аукциона, история ставок и отдельный экран ставки',
+    fullDescription: 'Cargo Auctions — фронтенд-приложение для работы с грузовыми аукционами. Пользователь может просматривать список торгов (таблица или карточки), фильтровать и пагинировать результаты, открывать карточку аукциона с деталями и историей ставок, а также ставить ставку по отдельной ссылке',
+    tags: ['React 19 + React DOM', 'Vite 8', 'MUI 9', 'TanStack Router', 'TanStack Query', 'Zustand', 'Open API', 'FSD'],
+    repoUrl: 'https://github.com/MarkovaDA/CargoAuctions',
+    publicUrl: 'https://github.com/MarkovaDA/CargoAuctions',
+    slots: [],
+  },
+  {
     slug: 'drawing-board',
     title: 'Drawing Board',
     description: 'Виртуальная доска для рисования наподобие Miro',
