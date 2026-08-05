@@ -4,10 +4,29 @@ export const projectsEn: Record<string, ProjectTranslation> = {
   'cargo-auctions': {
     title: 'Cargo Auctions',
     description:
-      'SPA for cargo auctions: filtered list, auction details, bid history, and a dedicated bidding screen',
+      'SPA for cargo auctions as a test assignment for a logistics company: filtered list, auction details, bid history, and a dedicated bidding screen',
     fullDescription:
       'Cargo Auctions is a frontend application for working with cargo auctions. Users can browse auctions (table or cards), filter and paginate results, open an auction card with details and bid history, and place a bid via a dedicated link.',
-    slots: {},
+    slots: {
+      main: {
+        label: 'Main application screen',
+        summary:
+          'The interface consists of an auction list table with filters and pagination',
+      },
+      'auctiondetailed-page': {
+        label: 'Auction details screen',
+        summary:
+          'The interface consists of an auction card with details and bid history',
+      },
+      'auctionsetbid-page': {
+        label: 'Place bid screen',
+        summary: 'The interface consists of a form for placing a bid',
+      },
+      'auctionhistory-page': {
+        label: 'Bid history screen',
+        summary: 'The interface consists of a table with the list of bids',
+      },
+    },
   },
   'drawing-board': {
     title: 'Drawing Board',

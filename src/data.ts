@@ -37,12 +37,53 @@ export const projects: Project[] = [
   {
     slug: 'cargo-auctions',
     title: 'Cargo Auctions',
-    description: 'SPA для грузовых аукционов: список с фильтрами, карточка аукциона, история ставок и отдельный экран ставки',
+    description: 'SPA для грузовых аукционов в рамках тестового задания для одной из логистических компаний: список с фильтрами, карточка аукциона, история ставок и отдельный экран ставки',
     fullDescription: 'Cargo Auctions — фронтенд-приложение для работы с грузовыми аукционами. Пользователь может просматривать список торгов (таблица или карточки), фильтровать и пагинировать результаты, открывать карточку аукциона с деталями и историей ставок, а также ставить ставку по отдельной ссылке',
     tags: ['React 19 + React DOM', 'Vite 8', 'MUI 9', 'TanStack Router', 'TanStack Query', 'Zustand', 'Open API', 'FSD'],
     repoUrl: 'https://github.com/MarkovaDA/CargoAuctions',
-    publicUrl: 'https://github.com/MarkovaDA/CargoAuctions',
-    slots: [],
+    publicUrl: 'https://markovada.github.io/CargoAuctions',
+    slots: [
+      {
+        id: 'main',
+        label: 'Главный экран приложения',
+        summary: 'Интерфейс состоит из таблицы со списком аукционов с фильтрами и пагинацией',
+        image: 'images/cargoauctions-maindemo.png',
+        techStack: {
+          title: 'React, TypeScript, Vite, Zustand',
+          description: 'Технологический стек: React, TypeScript, Vite, Zustand',
+        }
+      },
+      {
+        id: 'auctiondetailed-page',
+        label: 'Экран детальной информации о аукционе',
+        summary: 'Интерфейс состоит из карточки аукциона с деталями и историей ставок',
+        image: 'images/cargoauction-detailedpage.png',
+        techStack: {
+          title: 'React, TypeScript, Vite, Zustand',
+          description: 'Технологический стек: React, TypeScript, Vite, Zustand',
+        }
+      },
+      {
+        id: 'auctionsetbid-page',
+        label: 'Экран установки ставки',
+        summary: 'Интерфейс состоит из формы установки ставки',
+        image: 'images/cargoauctions-setbid.png',
+        techStack: {
+          title: 'React, TypeScript, Vite, Zustand',
+          description: 'Технологический стек: React, TypeScript, Vite, Zustand',
+        }
+      },
+      {
+        id: 'auctionhistory-page',
+        label: 'Экран истории ставок',
+        summary: 'Интерфейс состоит из таблицы со списком ставок',
+        image: 'images/cargoauction-historypage.png',
+        techStack: {
+          title: 'React, TypeScript, Vite, Zustand',
+          description: 'Технологический стек: React, TypeScript, Vite, Zustand',
+        }
+      }
+    ],
   },
   {
     slug: 'drawing-board',
